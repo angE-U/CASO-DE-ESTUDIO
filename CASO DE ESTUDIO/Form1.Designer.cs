@@ -35,9 +35,9 @@
             limpiar = new Button();
             label4 = new Label();
             groupBox1 = new GroupBox();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rblinea = new RadioButton();
+            rbHibrida = new RadioButton();
+            rbPresencial = new RadioButton();
             ACT = new GroupBox();
             checkBox4 = new CheckBox();
             checkBox3 = new CheckBox();
@@ -59,7 +59,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.ForeColor = SystemColors.HighlightText;
+            label1.ForeColor = SystemColors.InfoText;
             label1.Location = new Point(123, 50);
             label1.Name = "label1";
             label1.Size = new Size(136, 15);
@@ -69,7 +69,7 @@
             // 
             // MOSRAR_RESUMEN
             // 
-            MOSRAR_RESUMEN.BackColor = Color.Gold;
+            MOSRAR_RESUMEN.BackColor = SystemColors.ButtonHighlight;
             MOSRAR_RESUMEN.ForeColor = SystemColors.InfoText;
             MOSRAR_RESUMEN.Location = new Point(229, 347);
             MOSRAR_RESUMEN.Name = "MOSRAR_RESUMEN";
@@ -81,18 +81,19 @@
             // 
             // limpiar
             // 
-            limpiar.BackColor = Color.Gold;
+            limpiar.BackColor = SystemColors.ButtonHighlight;
             limpiar.Location = new Point(487, 347);
             limpiar.Name = "limpiar";
             limpiar.Size = new Size(117, 39);
             limpiar.TabIndex = 5;
             limpiar.Text = "Limpiar";
             limpiar.UseVisualStyleBackColor = false;
+            limpiar.Click += limpiar_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.ForeColor = SystemColors.HighlightText;
+            label4.ForeColor = SystemColors.InfoText;
             label4.Location = new Point(66, 432);
             label4.Name = "label4";
             label4.Size = new Size(59, 15);
@@ -102,10 +103,10 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.ForeColor = SystemColors.HighlightText;
+            groupBox1.Controls.Add(rblinea);
+            groupBox1.Controls.Add(rbHibrida);
+            groupBox1.Controls.Add(rbPresencial);
+            groupBox1.ForeColor = SystemColors.InfoText;
             groupBox1.Location = new Point(383, 156);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(255, 166);
@@ -113,38 +114,38 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Modalidad favorita (solo puedes elegir una)";
             // 
-            // radioButton3
+            // rblinea
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(34, 123);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(75, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "EN LÍNEA";
-            radioButton3.UseVisualStyleBackColor = true;
+            rblinea.AutoSize = true;
+            rblinea.Location = new Point(34, 123);
+            rblinea.Name = "rblinea";
+            rblinea.Size = new Size(75, 19);
+            rblinea.TabIndex = 2;
+            rblinea.TabStop = true;
+            rblinea.Text = "EN LÍNEA";
+            rblinea.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbHibrida
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(34, 78);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(70, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "HÍBRIDA";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbHibrida.AutoSize = true;
+            rbHibrida.Location = new Point(34, 78);
+            rbHibrida.Name = "rbHibrida";
+            rbHibrida.Size = new Size(70, 19);
+            rbHibrida.TabIndex = 1;
+            rbHibrida.TabStop = true;
+            rbHibrida.Text = "HÍBRIDA";
+            rbHibrida.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbPresencial
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(34, 34);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(99, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "PRESCENCIAL";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbPresencial.AutoSize = true;
+            rbPresencial.Location = new Point(34, 34);
+            rbPresencial.Name = "rbPresencial";
+            rbPresencial.Size = new Size(99, 19);
+            rbPresencial.TabIndex = 0;
+            rbPresencial.TabStop = true;
+            rbPresencial.Text = "PRESCENCIAL";
+            rbPresencial.UseVisualStyleBackColor = true;
             // 
             // ACT
             // 
@@ -152,7 +153,7 @@
             ACT.Controls.Add(checkBox3);
             ACT.Controls.Add(checkBox2);
             ACT.Controls.Add(checkBox1);
-            ACT.ForeColor = SystemColors.HighlightText;
+            ACT.ForeColor = SystemColors.InfoText;
             ACT.Location = new Point(57, 156);
             ACT.Name = "ACT";
             ACT.Size = new Size(258, 166);
@@ -204,7 +205,7 @@
             // 
             // Rsmn
             // 
-            Rsmn.BackColor = Color.Khaki;
+            Rsmn.BackColor = SystemColors.MenuHighlight;
             Rsmn.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Rsmn.Location = new Point(72, 461);
             Rsmn.Multiline = true;
@@ -218,7 +219,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkRed;
+            BackColor = SystemColors.ControlLight;
             ClientSize = new Size(662, 658);
             Controls.Add(Rsmn);
             Controls.Add(ACT);
@@ -248,9 +249,9 @@
         private Button limpiar;
         private Label label4;
         private GroupBox groupBox1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rblinea;
+        private RadioButton rbHibrida;
+        private RadioButton rbPresencial;
         private GroupBox ACT;
         private CheckBox checkBox3;
         private CheckBox checkBox2;
